@@ -1,8 +1,6 @@
-
 #pragma once
-using namespace std;
-
 #include "Character.h"
+using namespace std;
 
 class Mage : public Character {
 public:

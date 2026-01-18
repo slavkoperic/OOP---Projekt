@@ -2,6 +2,7 @@
 #include <vector>
 #include <algorithm>
 #include <iostream>
+#include <stdexcept>
 #include "Item.h"
 using namespace std;
 

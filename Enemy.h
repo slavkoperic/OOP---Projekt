@@ -1,7 +1,9 @@
 #pragma once
 #include <string>
 #include <iostream>
+#include <ostream>
 #include "Character.h"
+
 using namespace std;
 
 class Enemy {
@@ -14,7 +16,7 @@ public:
     }
 
     void Attack(Character& target) {
-        cout << Name << " deals" << Atk << " damage!\n";
+        cout << Name << " deals " << Atk << " damage!\n";
         target.Damage(Atk);
     }
 
@@ -23,4 +25,11 @@ public:
         cout << Name << " took " << dmg << " damage. HP: " << HP << endl;
     }
 };
+
+inline ostream& operator<<(ostream& os, const Enemy& e) {
+    os << "Enemy: " << e.Name
+        << " | HP: " << e.HP
+        << " | ATK: " << e.Atk;
+    return os;
+}
 

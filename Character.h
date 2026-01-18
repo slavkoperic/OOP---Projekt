@@ -2,9 +2,9 @@
 #include <string>
 #include <iostream>
 #include <algorithm>
-using namespace std;
-
+#include <ostream>
 #include "Inventory.h"
+using namespace std;
 
 class Character {
 public:
@@ -76,4 +76,13 @@ public:
         }
     }
 };
+
+inline ostream& operator<<(ostream& os, const Character& c) {
+    os << "Character: " << c.Name
+        << " | Level: " << c.lvl
+        << " | HP: " << c.HP << "/" << c.MaxHP
+        << " | Mana: " << c.Mana << "/" << c.MaxMana
+        << " | EXP: " << c.exp << "/" << c.expcap;
+    return os;
+}
 

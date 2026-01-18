@@ -36,12 +36,11 @@ int main() {
     }
 
     for (auto& enemy : enemies) {
-        cout << "\nA " << enemy.Name << " appears\n";
+        cout << "\n" << enemy << " appears!\n";
 
         while (enemy.HP > 0 && player->HP > 0) {
-            cout << "\n" << player->Name
-                << " HP: " << player->HP << "/" << player->MaxHP
-                << " Mana: " << player->Mana << "/" << player->MaxMana << endl;
+
+            cout << *player << endl;
 
             cout << "1. Basic Attack\n2. Special Attack\n3. Use Item\n";
             string action;
@@ -72,6 +71,7 @@ int main() {
                 enemy.TakeDamage(dmg);
 
             player->RegenerateMana();
+
             if (enemy.HP > 0)
                 enemy.Attack(*player);
         }
